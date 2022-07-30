@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Home</title>
+  <link rel="stylesheet" href="static/bootstrap.min.css" type="text/css" media="all" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  
+$(document).ready(function(){
+  $("#colf").click(function(){
+    
+  });
+});
+  
+</script>
+  <style type="text/css" media="all">
+    body{
+      text-align: center;
+    }
+   .container{
+     text-align: center;
+   }
+   #col{
+     width: 150px;
+     height: auto;
+     border: 01px solid #fefe;
+     border-radius: 10px;
+     margin: 10px; padding: 10px;
+     text-align: center;
+     justify-content: center;
+   }
+   .round{
+     width: 100%;
+     max-height: 100px;
+     margin: auto;
+     border-radius: 10px;
+   }
+   .pfoot{
+     text-align: center;
+   }
+   .text {
+  display: block;
+  width: 120px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+a{
+  text-decoration: none;
+}
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<a class="navbar-brand" href="#">ArewaPro</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+  <br />
+  <div class="container">
+      <img class="rounded" src="static/shop.jpg" alt="" width="100%" height="150px"/>
+  </div>
+  <br />
+  <p class="title">Categories</p>
+ <div class="container border">
+   <div class="row">
+ {%  for x in data: %}
+ 
+ <a href="{{url_for('product', id = x['id'] )}}">
+ 
+  <div id="col" class="col-sm-2">
+  <img class="round" src={{x['image']}} alt="" width="120px" height="auto"/>
+        <div class="pfoot">
+  <strong name="{{ x['title'] }}" class="text">{{ x['title'] }}</strong>
+  <p style="color: maroon">${{ x['price'] }}</p>
+     </div>
+  </div>
+      <!--here-->
+      {% endfor %}
+   </div>
+ </div>
+</body>
+</html>

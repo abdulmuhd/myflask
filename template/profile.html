@@ -1,0 +1,63 @@
+<html>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="{{ url_for('static', filename='bootstrap.min.css')}}">
+
+<style type="text/css" media="all">
+
+body{
+  background: #fef;
+  margin: 0px;
+  text-align: center;
+}
+input{
+  font-size: 16px;
+  padding: 8px;
+  width: 80%; height: 50px;
+  border: 0px solid blue;
+  border-radius: 10px;
+  margin: 10px;
+  margin-top: 0px;
+}
+#log{
+  font-size: 18px;
+  background-color: hotpink;
+  color: white;
+  border-radius: 10px;
+  font-weight: normal;
+}
+.well{
+  background-color: hotpink;
+  height: 50px;
+  display: flex;
+  padding-left: 20px;
+  padding-bottom: 0px;
+  font-size: 20px;
+  color: wheat; font-weight: bold;
+}
+form{
+  margin-top: 20px;
+}
+</style>
+<body>
+
+<form action="http://localhost:5000/login" method="POST">
+
+<h3 style="color:red">{{status}}</h3>
+
+<input type="email" name="email" placeholder="email" value="{{ request.form.email}}"/>
+
+<input type="password" name="passd" placeholder="password" value=""/>
+
+<input id="log" type="submit" value="Login"/>
+
+</table>
+</form>
+
+
+</body>
+</html>
