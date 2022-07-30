@@ -9,12 +9,9 @@ url = 'https://fakestoreapi.com/products'
 req = requests.get(url)
 resp = req.json()
 
-p = "/storage/emulated/0/Flask_T/template/"
-p2 = "/storage/emulated/0/Flask_T/template/static/"
-
 num = ran.randint(123455,997655)
 
-app=Flask(__name__, template_folder=p, static_folder=p2)
+app=Flask(__name__)
 
 app.secret_key = f"4tgvvt{num}"
 
